@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="Lunar.Paint.Uwp.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:win2d="using:Microsoft.Graphics.Canvas.UI.Xaml"
+    xmlns:local="using:Lunar.Paint.Uwp.Controls"
+    Style="{StaticResource PageStyle}"
+    xmlns:prismMvvm="using:Prism.Windows.Mvvm"
+    prismMvvm:ViewModelLocator.AutoWireViewModel="True" 
+    mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        
+        <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <local:HeaderMenu Grid.Row="0" x:Name="HeaderMenu" HeaderMenuEventOccur="HeaderMenu_HeaderMenuEventOccur" />
+
+            <win2d:CanvasControl Grid.Row="1" x:Name="MainCanvas" AllowDrop="True" ClearColor="Red" AutomationProperties.Name="-" />
+
+            <TextBlock Grid.Row="2" x:Name="FileOutput" />
+        </Grid>
+    </Grid>
+</Page>
