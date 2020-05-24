@@ -63,8 +63,9 @@ namespace Lunar.Paint.Uwp.Tests.WinAppDriver
 
             Thread.Sleep(TimeSpan.FromSeconds(1.5)); // Wait for 1.5 seconds
 
-            string savedFileContent = System.IO.File.ReadAllText(@"C:\Users\chunlin\Documents\sample.txt");
-            Assert.AreEqual("Something", savedFileContent);
+            var fileOutput = AppSession.FindElementByAccessibilityId("FileOutput");
+
+            Assert.AreEqual("File is saved.", fileOutput.Text);
         }
 
         [TestMethod]

@@ -52,6 +52,11 @@ namespace Lunar.Paint.Uwp.Views
                         await FileIO.WriteTextAsync(savingFile, "Something");
 
                         Windows.Storage.Provider.FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(savingFile);
+
+                        if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
+                        {
+                            FileOutput.Text = "File is saved.";
+                        }
                     }
                     break;
 
