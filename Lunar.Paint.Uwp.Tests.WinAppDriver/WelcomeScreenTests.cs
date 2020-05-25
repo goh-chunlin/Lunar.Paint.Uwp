@@ -58,6 +58,7 @@ namespace Lunar.Paint.Uwp.Tests.WinAppDriver
 
         //    Assert.IsTrue(File.Exists(screenshotFileName));
         //}
+
         [TestMethod]
         public void CloseWelcomeScreen() 
         {

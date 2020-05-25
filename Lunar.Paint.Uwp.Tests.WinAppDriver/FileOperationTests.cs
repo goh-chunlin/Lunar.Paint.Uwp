@@ -42,9 +42,8 @@ namespace Lunar.Paint.Uwp.Tests.WinAppDriver
         {
             // Test popup dialog
             //
-            // References: 
+            // Reference: 
             // 1. https://github.com/microsoft/WinAppDriver/blob/master/Samples/C%23/NotepadTest/ScenarioPopupDialog.cs
-            // 2. https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file
             var headerMenuSaveButton = AppSession.FindElementByAccessibilityId("HeaderMenuSaveButton");
             headerMenuSaveButton.Click();
 
@@ -76,9 +75,10 @@ namespace Lunar.Paint.Uwp.Tests.WinAppDriver
 
             Thread.Sleep(TimeSpan.FromSeconds(1)); // Wait for 1 second until the save dialog appears
 
-            AppSession.FindElementByAccessibilityId("1148").Click();
+            var openFileText = AppSession.FindElementByAccessibilityId("1148");
+            openFileText.Click();
             Thread.Sleep(TimeSpan.FromSeconds(1.5)); // Wait for 1.5 seconds
-            AppSession.Keyboard.SendKeys("sample-test.txt");
+            openFileText.SendKeys("sample-test.txt");
 
             AppSession.FindElementByAccessibilityId("1").Click();
 

@@ -8,20 +8,10 @@ namespace Lunar.Paint.Uwp.Tests.WinAppDriver
     [TestClass]
     public class MainPageTests : UITest
     {
-        //private static string _screenshotFolder;
-
         [ClassInitialize]
         public static void Setup(TestContext context)
         {
-            //// TODO WTS: change the location where screenshots are saved.
-            //// Create separate folders for saving the results of each test run.
-            //_screenshotFolder = $"{Path.GetPathRoot(Environment.CurrentDirectory)}\\Temp\\Screenshots\\{DateTime.Now.ToString("dd_HHmm")}\\";
-
-            //// Make sure the folder exists or saving screenshots will fail.
-            //if (!Directory.Exists(_screenshotFolder))
-            //{
-            //    Directory.CreateDirectory(_screenshotFolder);
-            //}
+            
         }
 
         [TestInitialize]
@@ -47,7 +37,7 @@ namespace Lunar.Paint.Uwp.Tests.WinAppDriver
         }
 
         [TestMethod]
-        public void HideCnavas()
+        public void HideCanvas()
         {
             var mainCanvas = AppSession.FindElementByAccessibilityId("MainCanvas");
 
