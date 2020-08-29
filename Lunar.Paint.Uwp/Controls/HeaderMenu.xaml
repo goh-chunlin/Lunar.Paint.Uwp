@@ -15,6 +15,7 @@
 
         <local:HeaderMenuButton x:Name="HeaderMenuOpenButton" Label="Open..." Glyph="&#xE838;" Click="HeaderMenuOpenButton_Click" AutomationProperties.Name="-" />
         <local:HeaderMenuButton x:Name="HeaderMenuSaveButton" Label="Save" Glyph="&#xE74E;" Click="HeaderMenuSaveButton_Click" AutomationProperties.Name="-" />
+        <local:HeaderMenuToggleButton x:Name="HeaderMenuShowCanvasButton" Label="Canvas" Glyph="&#xE2B1;" Click="HeaderMenuShowCanvasButton_Clicked" AutomationProperties.Name="-" />
         <local:HeaderMenuToggleButton x:Name="HeaderMenuShowGridButton" Label="Grid" Glyph="&#xE154;" Click="HeaderMenuShowGridButton_Clicked" AutomationProperties.Name="-" />
 
     </StackPanel>

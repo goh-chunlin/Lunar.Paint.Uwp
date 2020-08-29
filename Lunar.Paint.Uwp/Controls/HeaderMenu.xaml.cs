@@ -39,6 +39,12 @@ namespace Lunar.Paint.Uwp.Controls
             HeaderMenuEventOccur?.Invoke(sender, new HeaderMenuUpdateEventArgs(HeaderMenuUpdateEvent.Save));
         }
 
+        private void HeaderMenuShowCanvasButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            IsShowGrid = ((AppBarToggleButton)sender).IsChecked.HasValue && ((AppBarToggleButton)sender).IsChecked.Value;
+            HeaderMenuEventOccur?.Invoke(sender, new HeaderMenuUpdateEventArgs(HeaderMenuUpdateEvent.ShowCanvas));
+        }
+
         private void HeaderMenuShowGridButton_Clicked(object sender, RoutedEventArgs e)
         {
             IsShowGrid = ((AppBarToggleButton)sender).IsChecked.HasValue && ((AppBarToggleButton)sender).IsChecked.Value;

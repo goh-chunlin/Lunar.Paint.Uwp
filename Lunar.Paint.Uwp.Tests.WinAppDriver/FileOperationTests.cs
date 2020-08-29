@@ -62,9 +62,9 @@ namespace Lunar.Paint.Uwp.Tests.WinAppDriver
 
             Thread.Sleep(TimeSpan.FromSeconds(1.5)); // Wait for 1.5 seconds
 
-            var fileOutput = AppSession.FindElementByAccessibilityId("FileOutput");
+            var fileOutput = AppSession.FindElementByAccessibilityId("FileOperationOutput");
 
-            Assert.AreEqual("File is saved.", fileOutput.Text);
+            Assert.AreEqual("File is successfully saved.", fileOutput.Text);
         }
 
         [TestMethod]
@@ -84,9 +84,9 @@ namespace Lunar.Paint.Uwp.Tests.WinAppDriver
 
             Thread.Sleep(TimeSpan.FromSeconds(1.5)); // Wait for 1.5 seconds
 
-            var fileOutput = AppSession.FindElementByAccessibilityId("FileOutput");
+            var fileOutput = AppSession.FindElementByAccessibilityId("FileOperationOutput");
 
-            Assert.AreEqual("Something", fileOutput.Text);
+            Assert.AreEqual("File is successfully loaded.", fileOutput.Text);
         }
 
         [TestCleanup]

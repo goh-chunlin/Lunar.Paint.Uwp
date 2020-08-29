@@ -53,27 +53,81 @@
                 <Frame x:Name="shellFrame" />
             </Grid>
         </winui:NavigationView>
-        <Grid x:Name="WelcomeScreen" Background="#E627272b" AutomationProperties.Name="-">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                
-                <TextBlock Text="Lunar Paint"
-                       Style="{StaticResource HeaderTextBlockStyle}"
-                       Foreground="{ThemeResource SystemChromeWhiteColor}" 
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                <TextBlock Text="Let's draw lines on canvas"
-                       Style="{StaticResource SubheaderTextBlockStyle}"
-                       Foreground="{ThemeResource SystemChromeWhiteColor}"
-                       HorizontalAlignment="Center" VerticalAlignment="Center" />
-
-                <Button x:Name="WelcomeScreenEnterButton"
-                        Content="Enter"
-                        HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Style="{StaticResource AccentButtonStyle}"
-                        Click="WelcomeScreenEnterButton_Click" />
-
-            </StackPanel>
-            
+        <Grid x:Name="WelcomeScreen" Grid.RowSpan="2" Visibility="Visible" AutomationProperties.Name="-">
+            <Image Source="/Assets/Balloons.jpg" Stretch="UniformToFill" />
+            <Rectangle Fill="{ThemeResource SystemControlAcrylicElementBrush}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Rectangle Fill="{ThemeResource SystemBaseMediumHighColor}" />
+                    <Grid Margin="60,140,60,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="Paint.UWP" Style="{StaticResource HeaderTextBlockStyle}" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
+                        <TextBlock Grid.Row="1" Text="Paint.UWP is an image and photo editing software for PCs that run Windows 10."
+                                   Style="{StaticResource BodyTextBlockStyle}"
+                                   Margin="0,40,0,0"
+                                   Foreground="{ThemeResource AppBarBackgroundThemeBrush}" TextWrapping="Wrap" />
+                        <Button x:Name="WelcomeScreenEnterButton" Grid.Row="2" Content="Get Started"
+                                Style="{StaticResource AccentButtonStyle}" 
+                                Margin="0,40,0,0" Click="WelcomeScreenEnterButton_Click"/>
+                        <StackPanel Grid.Row="3" Margin="0,200,0,0">
+                            <TextBlock Text="About the App" Style="{StaticResource TitleTextBlockStyle}" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
+                            <TextBlock Text="Version 1.1" 
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                       Margin="0,40,0,0"
+                                       Foreground="{ThemeResource AppBarBackgroundThemeBrush}" />
+                            <TextBlock Text="Copyright © 2020 GCL Projects" 
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                       Foreground="{ThemeResource AppBarBackgroundThemeBrush}" />
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Rectangle Fill="{ThemeResource SystemBaseMediumLowColor}" />
+                    <Grid Margin="60,140,60,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Margin="0,200,0,0">
+                            <TextBlock Text="Additional Resources" Style="{StaticResource TitleTextBlockStyle}" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
+                            <StackPanel Margin="0,40,0,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="150" />
+                                    </Grid.ColumnDefinitions>
+                                    <HyperlinkButton Grid.Column="0" Content="Builds History" NavigateUri="https://gohchunlin.visualstudio.com/Lunar.Paint.Uwp/_build?definitionId=15" 
+                                             Foreground="{ThemeResource AppBarBackgroundThemeBrush}" />
+                                    <TextBlock Grid.Column="1" Text="Azure DevOps" HorizontalAlignment="Right" 
+                                               Margin="0,6,0,0"
+                                       Foreground="{ThemeResource SystemChromeHighColor}" />
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="150" />
+                                    </Grid.ColumnDefinitions>
+                                    <HyperlinkButton Grid.Column="0" Content="Repository" NavigateUri="https://github.com/goh-chunlin/Lunar.Paint.Uwp" 
+                                             Foreground="{ThemeResource AppBarBackgroundThemeBrush}" />
+                                    <TextBlock Grid.Column="1" Text="GitHub" HorizontalAlignment="Right" 
+                                               Margin="0,6,0,0"
+                                       Foreground="{ThemeResource SystemChromeHighColor}" />
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

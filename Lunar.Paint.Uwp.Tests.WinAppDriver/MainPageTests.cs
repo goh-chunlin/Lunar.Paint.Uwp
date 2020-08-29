@@ -37,14 +37,16 @@ namespace Lunar.Paint.Uwp.Tests.WinAppDriver
         }
 
         [TestMethod]
-        public void HideCanvas()
+        public void ShowOrHideCanvas()
         {
             var mainCanvas = AppSession.FindElementByAccessibilityId("MainCanvas");
 
-            var headerMenuShowGridButton = AppSession.FindElementByAccessibilityId("HeaderMenuShowGridButton");
+            bool originalCanvasVisibility = mainCanvas.Displayed;
+
+            var headerMenuShowGridButton = AppSession.FindElementByAccessibilityId("HeaderMenuShowCanvasButton");
             headerMenuShowGridButton.Click();
 
-            Assert.AreEqual(false, mainCanvas.Displayed);
+            Assert.AreEqual(!originalCanvasVisibility, mainCanvas.Displayed);
         }
 
         [TestCleanup]

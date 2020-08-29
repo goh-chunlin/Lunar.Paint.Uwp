@@ -21,6 +21,7 @@ namespace Lunar.Paint.Uwp.EventData
     {
         Save,
         Open,
-        DrawGridOnCanvas
+        DrawGridOnCanvas,
+        ShowCanvas
     }
 }

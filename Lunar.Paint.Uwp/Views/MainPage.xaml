@@ -16,14 +16,22 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             
             <local:HeaderMenu Grid.Row="0" x:Name="HeaderMenu" HeaderMenuEventOccur="HeaderMenu_HeaderMenuEventOccur" />
 
-            <win2d:CanvasControl Grid.Row="1" x:Name="MainCanvas" AllowDrop="True" ClearColor="Red" AutomationProperties.Name="-" />
+            <win2d:CanvasControl Grid.Row="1" x:Name="MainCanvas" AllowDrop="True" ClearColor="White" AutomationProperties.Name="-" />
 
-            <TextBlock Grid.Row="2" x:Name="FileOutput" />
+            <Grid Grid.Row="2" VerticalAlignment="Top" Background="#f7f7f7">
+                <Grid>
+                    <Rectangle Width="Auto" Height="1" VerticalAlignment="Top" Fill="#cccccc" />
+                </Grid>
+
+                <Grid Margin="5,6,0,0" HorizontalAlignment="Left">
+                    <TextBlock x:Name="FileOperationOutput" />
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
