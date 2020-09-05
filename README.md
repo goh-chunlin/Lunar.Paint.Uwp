@@ -1,5 +1,5 @@
 # Lunar.Paint.Uwp
-This is a demo project to compliment my blog post about automated GUI testing of UWP apps using Appium.
+This is a demo project to complement my blog post about automated GUI testing of UWP apps using Appium.
 
 [![Build status](https://dev.azure.com/gohchunlin/Lunar.Paint.Uwp/_apis/build/status/GitHub)](https://dev.azure.com/gohchunlin/Lunar.Paint.Uwp/_build/latest?definitionId=15)
 
